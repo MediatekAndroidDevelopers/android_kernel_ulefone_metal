@@ -96,3 +96,5 @@ x509.genkey
 
 # Kconfig presets
 all.config
+
+!FT_Upgrade_App.i
