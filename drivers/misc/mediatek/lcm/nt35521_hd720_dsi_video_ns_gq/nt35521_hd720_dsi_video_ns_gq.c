@@ -22,8 +22,6 @@
 #define FRAME_WIDTH  										(720)
 #define FRAME_HEIGHT 										(1280)
 
-extern int lcm_ata_check_flag;
-
 #define REGFLAG_DELAY             							0xFC
 #define REGFLAG_END_OF_TABLE      							0xFD   // END OF REGISTERS MARKER
 
@@ -846,16 +844,6 @@ static unsigned int lcm_compare_id(void)
 	return (0x3552 == id) ? 1 : 0;
 }
 
-static unsigned int lcm_ata_check(unsigned char *buffer)
-{
-	if(lcm_ata_check_flag){
-		return 1;
-	}else{
-		return 0;
-	}
-}
-
-
 LCM_DRIVER nt35521_hd720_ns_gq_lcm_drv =
 {
     .name           = "nt35521_hd720_dsi_video_ns_gq",
@@ -865,5 +853,4 @@ LCM_DRIVER nt35521_hd720_ns_gq_lcm_drv =
 	.suspend 		= lcm_suspend,
 	.resume 		= lcm_resume,
 	.compare_id 	= lcm_compare_id,
-    .ata_check		= lcm_ata_check,   
 };
