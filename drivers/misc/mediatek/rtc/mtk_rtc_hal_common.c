@@ -264,7 +264,7 @@ void hal_rtc_read_rg(void)
 	hal_rtc_xinfo("RTC_IRQ_EN = 0x%x, RTC_PDN1 = 0x%x\n", irqen, pdn1);
 }
 
-#ifndef USER_BUILD_KERNEL
+#if 0 //#ifndef USER_BUILD_KERNEL
 void rtc_lp_exception(void)
 {
 	u16 bbpu, irqsta, irqen, osc32;
