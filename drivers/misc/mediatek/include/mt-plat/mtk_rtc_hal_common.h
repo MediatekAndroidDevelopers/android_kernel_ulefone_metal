@@ -47,7 +47,7 @@ extern void hal_rtc_save_pwron_alarm(void);
 extern void hal_rtc_get_pwron_alarm_time(struct rtc_time *tm);
 extern void hal_rtc_set_pwron_alarm_time(struct rtc_time *tm);
 extern void hal_rtc_read_rg(void);
-#ifndef USER_BUILD_KERNEL
+#if 0 //#ifndef USER_BUILD_KERNEL
 extern void rtc_lp_exception(void);
 #endif
 
